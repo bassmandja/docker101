@@ -1,0 +1,43 @@
+version: '3'
+
+services:
+  pitboss1:
+    entrypoint: ./pitboss/src/launchNodes.sh
+    environment:
+      MYID: 1
+      TEAMATES: '1 2 3 4'
+    image: pitbosssdk:latest
+    networks:
+      blackjack_network:
+        ipv4_address: 10.2.5.201
+  pitboss2:
+    entrypoint: ./pitboss/src/launchNodes.sh
+    environment:
+      MYID: 2
+      TEAMATES: '1 2 3 4'
+    image: pitbosssdk:latest
+    networks:
+      blackjack_network:
+        ipv4_address: 10.2.5.202
+  pitboss3:
+    entrypoint: ./pitboss/src/launchNodes.sh
+    environment:
+      MYID: 3
+      TEAMATES: '1 2 3 4'
+    image: pitbosssdk:latest
+    networks:
+      blackjack_network:
+        ipv4_address: 10.2.5.203
+  pitboss4:
+    entrypoint: ./pitboss/src/launchNodes.sh
+    environment:
+      MYID: 4
+      TEAMATES: '1 2 3 4'
+    image: pitbosssdk:latest
+    networks:
+      blackjack_network:
+        ipv4_address: 10.2.5.204
+
+networks:
+  blackjack_network:
+    external: true
