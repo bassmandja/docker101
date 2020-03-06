@@ -1,3 +1,4 @@
 FROM python:latest
-COPY hi.py .
+ADD hi.py /hi/
+WORKDIR /hi
 CMD python hi.py
